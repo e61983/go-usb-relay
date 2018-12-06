@@ -19,4 +19,6 @@
 /vendor/
 /Godeps/
 
+release
+
 # End of https://www.gitignore.io/api/go
