@@ -100,7 +100,6 @@ func (this *Relay) setIO(s IoStatus, no ChannelNumber) error {
 
 func (this *Relay) GetStatus() (*ChannelStatus, error) {
 	cmd := make([]byte, 9)
-	cmd[0] = 0x03
 	_, err := this.dev.GetFeatureReport(cmd)
 	if err != nil {
 		return nil, err
@@ -156,7 +155,6 @@ func (this *Relay) SetSN(sn string) error {
 
 func (this *Relay) GetSN() (string, error) {
 	cmd := make([]byte, 9)
-	cmd[0] = 0x03
 	_, err := this.dev.GetFeatureReport(cmd)
 	var sn string
 	if err != nil {
