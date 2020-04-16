@@ -54,8 +54,8 @@ func List() []*Relay {
 		relay, err := info.Open()
 		if err == nil {
 			list = append(list, &Relay{info: &relayInfos[i]})
+			relay.Close()
 		}
-		relay.Close()
 	}
 	return list
 }
